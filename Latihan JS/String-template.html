@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Template</title>
+</head>
+
+<body>
+    <h1>String Template</h1>
+    <script>
+        // Contoh penggunaan string template
+        const name = "Yehezkiel";
+        const template = `Halo, nama saya ${name}. Selamat datang di halaman ini!`;
+        // Menggunakan backticks untuk membuat string template
+        // String template memungkinkan kita untuk menyisipkan variabel ke dalam string dengan mudah
+        // Dengan menggunakan ${variabel}, kita dapat menyisipkan nilai variabel ke dalam string
+        document.write(template); // Menampilkan string template di halaman
+
+        document.write("<p>");
+        //! Expreesion dalam string template
+        const a = 5;
+        const b = 10;
+
+        const result = `Hasil dari ${a} + ${b} adalah ${a + b}.`;
+        // Kita juga bisa menyisipkan ekspresi dalam string template
+        document.write(result); // Menampilkan hasil ekspresi di halaman
+
+        let multiline = `Ini adalah contoh string multiline. 
+Kita bisa menulis teks di beberapa baris
+tanpa perlu menggunakan karakter khusus.`;
+        document.write("<pre>" + multiline + "</pre>");
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+
+<body>
+    <!-- Cara membuat Array -->
+    <h2>Array</h2>
+    <script>
+        let buah = ["apel", "jeruk", "mangga"];
+        let topping = ["keju", "Meses", "coklat", "strawberry", "susu"];
+
+        // Menampilkan array di halaman
+        document.write(buah.join(", ")); // Menampilkan array buah dengan koma
+        document.write("<br>"); // Baris baru
+        document.write(topping[3]);
+    </script>
+
+    <!-- Cara menambahkan data ke Array -->
+    <h2>Menambahkan Data ke Array</h2>
+    <script>
+        let sayur = ["bayam", "kangkung", "sawi"];
+        document.write(sayur.join(", ")); // Menampilkan array sayur dengan koma
+
+        document.write("<br>"); // Baris baru
+
+        // Menambahkan data ke array
+        sayur.push("wortel"); // Menambahkan "wortel" ke akhir array
+        document.write(sayur.join(", "));
+
+        //Menambahkan data ke awal array
+        sayur.unshift("brokoli"); // Menambahkan "brokoli" ke awal array
+        document.write(`<br> ${sayur.join(", ")}`);
+
+        // Menambahkan data ke posisi tertentu
+        sayur.splice(2, 0, "kubis"); // Menambahkan "kubis" di indeks 2
+        document.write(`<br> ${sayur.join(", ")}`);
+
+        // Mendapatkan panjang array
+        document.write(`<br> Panjang array sayur: ${sayur.length}`);
+
+        // Mengubah posisi index
+        sayur[1] = "selada"; // Mengubah nilai di indeks 1 menjadi "selada"
+        document.write(`<br> Setelah mengubah: ${sayur.join(", ")}`);
+
+        // Menghapus data dari array
+        delete sayur[2]; // Menghapus elemen di indeks 3 tapi indeks tetap ada/tidak bergeser
+        document.write(`<br> Setelah menghapus: ${sayur.join(", ")}`);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perbandingan</title>
+</head>
+<body>
+    <!-- Macam macam perbandingan -->
+    <h1>Perbandingan</h1>
+    <script>
+        let a = 10;
+        let b = 20;
+        document.write("Nilai a: " + a + "<br>");
+        document.write("Nilai b: " + b + "<br>");
+
+        // Operator perbandingan
+        document.write("a > b: " + (a > b) + "<br>"); 
+        document.write("a < b: " + (a < b) + "<br>"); 
+        document.write("a >= b: " + (a >= b) + "<br>"); 
+        document.write("a <= b: " + (a <= b) + "<br>"); 
+        document.write("a == b: " + (a == b) + "<br>"); 
+        document.write("a === b: " + (a === b) + "<br>"); // Sama dengan (nilai dan tipe sama)
+
+        // Operator perbandingan dengan tipe data
+        let c = "10";   
+        document.write("a == c: " + (a == c) + "<br>"); // Sama dengan (nilai sama, tipe berbeda)
+        document.write("a === c: " + (a === c) + "<br>"); // 
+        document.write("a != c: " + (a != c) + "<br>"); // Tidak sama dengan (nilai sama, tipe berbeda)
+        document.write("a !== c: " + (a !== c) + "<br>  "); // Tidak sama dengan (nilai atau tipe berbeda)      
+        </script>
+    
+    <h1>Operator Logika</h1>
+    <script>
+        let x = true;
+        let y = false;
+        document.write("Nilai x: " + x + "<br>");
+        document.write("Nilai y: " + y + "<br>");
+        
+
+        document.write("x && y: " + (x && y) + "<br>"); // AND
+        document.write("x || y: " + (x || y) + "<br>"); // OR
+        document.write("!x: " + (!x) + "<br>"); // NOT
+
+        // Contoh penggunaan operator logika 
+        document.write("<p>Contoh penggunaan operator logika:");
+            const nilaiUjian = 71;
+            const nilaiTugas = 75;
+            document.write("<br>Nilai Ujian: " + nilaiUjian);
+            document.write("<br>Nilai Tugas: " + nilaiTugas);
+            document.write("<p>");
+
+            const lulusUjian = nilaiUjian >= 70.0;
+            const lulusTugas = nilaiTugas >= 75.0;
+
+            if (lulusUjian && lulusTugas) {
+                document.write("Anda lulus dengan baik!");
+            } else if (lulusUjian || lulusTugas) {
+                document.write("Anda lulus, tetapi perlu perbaikan.");
+            } else {
+                document.write("Anda tidak lulus.");
+            }
+    </script>
+</body>
+</html>
