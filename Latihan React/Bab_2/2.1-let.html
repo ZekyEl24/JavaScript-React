@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.1 Membuat Variabel dengan let</title>
+</head>
+<body>
+    <h1>2.1 Membuat Variabel dengan let</h1>
+
+    <script>
+    // ==============================
+    // Apa itu let?
+    // ==============================
+    // let digunakan untuk membuat variabel dengan "block scope"
+    // Artinya: variabel hanya bisa diakses di dalam blok {...} tempat ia dibuat.
+    // Bedanya dengan var:
+    // - var = function scope (bisa bocor keluar block)
+    // - let = block scope (lebih aman & modern)
+
+    let foo = "Belajar ECMAScript 6";
+    console.log(foo); // Output: Belajar ECMAScript 6
+
+    // Nilai dari let masih bisa diubah
+    foo = "React Uncover";
+    console.log(foo); // Output: React Uncover
+
+    // Contoh perbedaan scope
+    {
+    let bar = "Hanya bisa diakses di dalam block ini";
+      console.log(bar); // Bisa diakses di sini
+    }
+
+    // console.log(bar); // Error: bar is not defined
+    // karena bar dibuat pakai let, dia tidak keluar block
+    </script>
+</body>
+</html>
+

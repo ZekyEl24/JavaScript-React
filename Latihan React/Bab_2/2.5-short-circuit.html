@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2.5 Short-Circuit Conditionals</title>
+</head>
+<body>
+  <h1>2.5 Short-Circuit Conditionals</h1>
+
+  <script>
+    // ==============================
+    // Apa itu Short-Circuit?
+    // ==============================
+    // Gunakan operator logika (|| dan &&) untuk membuat kondisi singkat.
+    // - OR (||)  -> ambil nilai pertama yang truthy
+    // - AND (&&) -> eksekusi hanya jika kondisi truthy
+
+    let username = "";
+    let displayName = username || "Guest"; 
+    console.log(displayName); // Output: Guest (karena username kosong)
+
+    let isLoggedIn = true;
+    isLoggedIn && console.log("Selamat datang!"); 
+    // Output: Selamat datang! (hanya jalan kalau true)
+
+    // Perbandingan dengan ternary:
+    // - Ternary cocok saat ada dua pilihan.
+    // - Short-circuit cocok untuk default value atau eksekusi cepat.
+  </script>
+</body>
+</html>
+

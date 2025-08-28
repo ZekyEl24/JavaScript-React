@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.14 Asynchronous JavaScript</title>
+</head>
+<body>
+    <h1>2.14 Asynchronous JavaScript</h1>
+
+    <script>
+    // ==============================
+    // Asynchronous JavaScript
+    // ==============================
+    // Ada 3 cara populer menangani async:
+    // 1. Callback
+    // 2. Promise (then, catch)
+    // 3. async/await (lebih modern & mudah dibaca)
+
+    // Contoh Promise
+    const myPromise = new Promise((resolve, reject) => {
+        setTimeout(() => resolve("Data berhasil diambil"), 1000);
+    });
+
+    myPromise.then(result => console.log("then:", result));
+
+    // Contoh async/await
+    async function getData() {
+        const result = await myPromise;
+        console.log("async/await:", result);
+    }
+    getData();
+  </script>
+</body>
+</html>

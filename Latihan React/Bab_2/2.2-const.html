@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2.2 Membuat Konstanta dengan const</title>
+</head>
+<body>
+  <h1>2.2 Membuat Konstanta dengan const</h1>
+
+  <script>
+    // ==============================
+    // Apa itu const?
+    // ==============================
+    // const digunakan untuk variabel yang nilainya tidak bisa diganti (immutable).
+    // Bedanya dengan let:
+    // - let bisa diubah nilainya
+    // - const tidak bisa diubah nilainya setelah dibuat
+
+    const pi = 3.14;
+    console.log(pi); // Output: 3.14
+
+    // pi = 22/7; 
+    // Error: Assignment to constant variable
+
+    // ==============================
+    // Hati-hati!
+    // ==============================
+    // Kalau const dipakai untuk OBJECT atau ARRAY,
+    // isinya masih bisa dimodifikasi, tapi tidak bisa ditimpa variabelnya.
+    
+    const fruits = ["Apple", "Mango"];
+    fruits.push("Banana"); // boleh menambah isi
+    console.log(fruits); // Output: ["Apple", "Mango", "Banana"]
+
+    // fruits = ["Durian"]; // Error: tidak bisa assign ulang array
+  </script>
+</body>
+</html>
+

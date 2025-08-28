@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>conditional_operator</title>
+</head>
+<body>
+    <h1>Belajar conditional_operator</h1>
+    <script>
+    //operator if...else
+    const nilai = 60;
+    let ucapan;
+    if (nilai>= 75){
+    ucapan = "Selamat Anda Lulus";
+    } else {
+    ucapan = "Silahkan Coba Lagi";
+    }
+
+    document.write(`Nilai anda: ${nilai} <br>`);
+    document.write(ucapan + "<br>");
+
+    //operator conditional (ternary)
+    const nilai2 = 80;
+    const ucapan2 = (nilai2 >= 75) ? "Selamat Anda Lulus" : "Remidial";
+
+    document.write(`Nilai anda: ${nilai2} <br>`);
+    document.write(ucapan2);
+
+    //dapat juga digunakan untuk memanggil fungsi
+    const input = "100";
+    const result =`<div class="${Number.isInteger(input) ? 'valid' : 'invalid'}">`;
+
+    console.log(result); // <div class="invalid">
+
+    </script>
+</body>
+</html>

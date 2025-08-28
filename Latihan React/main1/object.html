@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    <script>
+    //class 
+    class Laptop{
+        constructor(merk, warna, harga){ //constructor berfungsi untuk menginisialisasi object
+            this.merk = merk; //this berfungsi untuk mengakses properti dan method yang ada di dalam class
+            this.warna = warna;
+            this.harga = harga;
+        }
+
+        info(){
+            return `LaptopMerk: ${this.merk}, Warna: ${this.warna}, Harga: ${this.harga}`;
+        }
+    }
+
+    let laptopRudi = new Laptop("Asus", "Hitam", 15000000); //membuat object baru dari class Laptop
+    console.log(laptopRudi.merk); //mengakses properti merk dari object laptopRudi
+    console.log(laptopRudi.warna); //mengakses properti warna dari object laptopRudi
+    console.log(laptopRudi.harga); //mengakses properti harga dari object laptop
+    console.log(laptopRudi.info());
+
+    let laptopBudi = {
+        milik: "Budi",
+        merk: "Acer",
+        info : () => `Laptop Budi ${this.merk}`
+    };
+    </script>
+</body>
+</html>

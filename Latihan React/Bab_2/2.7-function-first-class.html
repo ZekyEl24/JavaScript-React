@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2.7 Function: First-Class Citizens</title>
+</head>
+<body>
+  <h1>2.7 Function: First-Class Citizens</h1>
+
+  <script>
+    // ==============================
+    // Apa maksudnya Function adalah First-Class Citizens?
+    // ==============================
+    // Artinya: fungsi diperlakukan seperti nilai.
+    // Bisa disimpan di variabel, dijadikan parameter, atau dikembalikan.
+
+    function sapa(nama) {
+      return `Halo, ${nama}!`;
+    }
+
+    // Simpan fungsi ke variabel
+    const halo = sapa;
+    console.log(halo("Andre")); // Output: Halo, Andre!
+
+    // Kirim fungsi sebagai parameter
+    function jalankan(fn, nilai) {
+      return fn(nilai);
+    }
+    console.log(jalankan(x => x * 2, 5)); // Output: 10
+
+    // Fungsi mengembalikan fungsi lain
+    function kali(faktor) {
+      return (n) => n * faktor;
+    }
+    const kali3 = kali(3);
+    console.log(kali3(7)); // Output: 21
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.8 Class dan Object</title>
+</head>
+<body>
+    <h1>2.8 Class dan Object</h1>
+
+    <script>
+    // ==============================
+    // Apa itu Class?
+    // ==============================
+    // Class adalah "cetakan" untuk membuat object.
+    // Di dalamnya ada constructor (untuk inisialisasi)
+    // dan method (fungsi di dalam class).
+    // Bisa juga menggunakan inheritance (pewarisan).
+
+    class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    greet() {
+        return `Halo, saya ${this.name} (${this.age} tahun).`;
+    }
+    }
+
+    class Employee extends Person {
+    constructor(name, age, job) {
+        super(name, age); // memanggil constructor dari parent
+        this.job = job;
+    }
+
+    info() {
+        return `${this.greet()} Saya bekerja sebagai ${this.job}.`;
+        }
+    }
+
+    const emp = new Employee("Andre", 30, "Frontend Developer");
+    console.log(emp.info());
+    // Output: Halo, saya Andre (30 tahun). Saya bekerja sebagai Frontend Developer.
+    </script>
+</body>
+</html>

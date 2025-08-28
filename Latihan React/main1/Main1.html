@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Uncover</title>
+</head>
+<body>
+    <h1>Belajar JavaScript (ES6)</h1>
+
+    <script>
+    var foo = "Belajar ECMAScript 6";
+    console.log(foo);
+
+    foo = "React Uncover";
+    console.log(foo);
+
+    let bar = "Belajar React JS";
+    document.write(bar) + "<br>";
+
+    bar = "React Uncover";
+    document.write(bar);
+    </script>
+
+    <br>
+    <h3>var_vs_let_scope_2</h3>
+    <script>
+
+    document.write("---- Pengunaan var ----<br><br>");
+    //Penggunaan var di dalam for loop
+    var i = "Belajar React JS";
+
+    for (var i = 1; i<=5; i++){
+        document.write(i);
+
+    }
+    document.write("<br>" + i);//6
+    console.log(i);// 6
+
+    document.write("<br><br>"); 
+    document.write("---- Pengunaan let ----<br><br>");
+
+
+    //Penggunaan let di dalam for loop
+    let j = "Belajar React JS";
+    for (let j = 1; j<=5; j++){
+        document.write(j);
+    }
+    document.write("<br>" + j);//Belajar React JS
+    console.log(j);//Belajar React JS
+    </script>
+    
+</body>
+</html>

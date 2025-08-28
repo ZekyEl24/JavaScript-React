@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.12 Rest Parameter</title>
+</head>
+<body>
+    <h1>2.12 Rest Parameter</h1>
+
+    <script>
+    // ==============================
+    // Apa itu Rest Parameter (...variable)?
+    // ==============================
+    // Digunakan untuk menampung sisa parameter
+    // dalam bentuk array.
+    // Sangat berguna jika jumlah argumen tidak pasti.
+
+    function sum(...numbers) {
+      // numbers otomatis jadi array
+        return numbers.reduce((total, n) => total + n, 0);
+    }
+
+    console.log(sum(1, 2, 3));        // 6
+    console.log(sum(10, 20, 30, 40)); // 100
+
+    // Rest parameter harus di posisi terakhir!
+    function intro(first, ...others) {
+        console.log("Pertama:", first);
+        console.log("Lainnya:", others);
+    }
+    intro("A", "B", "C", "D");
+    // Output:
+    // Pertama: A
+    // Lainnya: ["B","C","D"]
+    </script>
+</body>
+</html>

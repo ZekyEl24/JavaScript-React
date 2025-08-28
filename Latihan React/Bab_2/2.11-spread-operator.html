@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.11 Spread Operator</title>
+</head>
+<body>
+    <h1>2.11 Spread Operator</h1>
+
+    <script>
+    // ==============================
+    // Apa itu Spread Operator (...variable)?
+    // ==============================
+    // Digunakan untuk "menyebarkan" isi array atau object.
+    // Biasanya untuk menggabungkan, copy, atau mengirim data ke fungsi.
+
+    // Spread pada Array
+    const arr1 = [1, 2, 3];
+    const arr2 = [4, 5];
+    const merged = [...arr1, ...arr2];
+    console.log(merged); // [1,2,3,4,5]
+
+    // Spread pada Object
+    const obj1 = { a: 1, b: 2 };
+    const obj2 = { b: 99, c: 3 };
+    const mergedObj = { ...obj1, ...obj2 };
+    console.log(mergedObj); // { a:1, b:99, c:3 }
+
+    // Spread untuk memanggil fungsi
+    function sum(x, y, z) {
+        return x + y + z;
+    }
+    const numbers = [10, 20, 30];
+    console.log(sum(...numbers)); // 60
+    </script>
+</body>
+</html>

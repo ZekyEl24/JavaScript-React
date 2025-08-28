@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.13 Array Method: forEach() & map()</title>
+</head>
+<body>
+    <h1>2.13 Array Method: forEach() & map()</h1>
+
+    <script>
+    // ==============================
+    // Apa bedanya forEach dan map?
+    // ==============================
+    // - forEach() -> menjalankan fungsi untuk tiap elemen,
+    //                TAPI tidak mengembalikan array baru.
+    // - map() -> menghasilkan array baru dari hasil fungsi.
+
+    const numbers = [1, 2, 3];
+
+    console.log("forEach:");
+    numbers.forEach(n => console.log(n * 2));
+    // Output: 2, 4, 6 (cetak langsung, tidak buat array baru)
+
+    console.log("map:");
+    const doubled = numbers.map(n => n * 2);
+    console.log(doubled);
+    // Output: [2, 4, 6] (array baru)
+    </script>
+</body>
+</html>

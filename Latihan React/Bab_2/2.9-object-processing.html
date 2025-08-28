@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.9 Memproses Object</title>
+</head>
+<body>
+    <h1>2.9 Memproses Object</h1>
+
+    <script>
+    // ==============================
+    // Cara memproses object di JavaScript
+    // ==============================
+    // Ada beberapa cara:
+    // 1. for...in -> untuk membaca key dalam object
+    // 2. Object.keys() -> ambil daftar key
+    // 3. Object.values() -> ambil daftar value
+    // 4. Object.entries() -> ambil pasangan [key, value]
+
+    const user = { name: "Andre", age: 30, job: "Programmer" };
+
+    // for...in
+    for (let key in user) {
+    console.log(key, ":", user[key]);
+    }
+
+    // Object.keys
+    console.log(Object.keys(user)); // ["name", "age", "job"]
+
+    // Object.values
+    console.log(Object.values(user)); // ["Andre", 30, "Programmer"]
+
+    // Object.entries
+    console.log(Object.entries(user)); 
+    // [["name","Andre"], ["age",30], ["job","Programmer"]]
+
+    // Bisa juga digabung dengan for...of
+    for (let [k, v] of Object.entries(user)) {
+    console.log(`${k} = ${v}`);
+    }
+    </script>
+</body>
+</html>

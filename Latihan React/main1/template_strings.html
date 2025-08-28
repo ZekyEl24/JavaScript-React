@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>template_strings</title>
+</head>
+<body>
+    <h1>Belajar Template Strings</h1>
+    <script>
+    const nama = "React Uncover";
+    const bar = "Belajar React JS";
+
+    console.log("Halo, nama saya " + nama + ", saya sedang " + bar);
+    console.log(`Halo, nama saya ${nama}, saya sedang ${bar}`);
+    console.log(`10 tambah 7 adalah ${10 + 7}`); 
+
+    //melakukan pemanggilan fungsi di dalam template strings
+    function kuadrat(x){
+        return x * x;
+    }
+    console.log(`Hasil kuadrat dari 5 adalah ${kuadrat(5)}`);
+    document.write(`Hasil kuadrat dari 7 adalah ${kuadrat(7)}`)
+    
+    </script>
+</body>
+</html>
