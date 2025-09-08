@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>4.2 Mengakses File Babel</title>
+
+    <!-- Tools React & ReactDOM -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Babel: supaya JSX bisa dibaca browser saat development -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <h1>4.2 Mengakses File Babel</h1>
+    <div id="root"></div>
+
+    <!-- Wajib type="text/babel" kalau pakai JSX -->
+    <script type="text/babel">
+    // JSX (JavaScript XML) → sintaks mirip HTML yang ditulis di JS
+    // Babel akan compile ke React.createElement(...)
+
+    const myElement = (
+        <ul>
+            <li><a href="https://id.wikipedia.org/wiki/Espreso">Espresso</a></li>
+            <li><a href="https://id.wikipedia.org/wiki/Kapucino">Cappuccino</a></li>
+            <li><a href="https://id.wikipedia.org/wiki/Moka">Moccacino</a></li>
+        </ul>
+    );
+
+        // Cara lama: ReactDOM.render() (sebelum React 18)
+        // Cara baru: ReactDOM.createRoot().render()
+        ReactDOM.render(myElement, document.getElementById('root'));
+    </script>
+</body>
+</html>

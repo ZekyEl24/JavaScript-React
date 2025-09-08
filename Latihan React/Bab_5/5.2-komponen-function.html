@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>5.2 Komponen Function</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <h1>5.2 Komponen Function</h1>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // Komponen function → paling umum dipakai
+        // return → JSX yang akan dirender
+        function Welcome(props) {
+        return <h2>Selamat datang, {props.name}</h2>;
+        }
+
+        const App = () => (
+        <div>
+            <Welcome name="Hezki" />
+            <Welcome name="Budi" />
+            <Welcome name="Lia" />
+        </div>
+        );
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>

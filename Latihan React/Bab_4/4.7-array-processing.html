@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>4.7 Array Processing</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <h1>4.7 Array Processing</h1>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const drinks = ['Espresso', 'Cappuccino', 'Moccacino', 'Latte'];
+
+        const element = (
+        <ul>
+            {drinks.map((d, i) => <li key={i}>{i+1}. {d} - by Hezki</li>)}
+        </ul>
+        );
+
+        ReactDOM.render(element, document.getElementById('root'));
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>4.1 Pengertian JSX</title>
+
+    <!-- Tools:
+        - React (core UI)
+        - ReactDOM (render ke DOM browser)
+        - Babel (compiler agar JSX bisa dipakai langsung di browser saat development)
+    -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <h1>4.1 Pengertian JSX</h1>
+    <div id="root"></div>
+
+    <script type="text/babel">
+    // JSX = sintaks mirip HTML yang ditulis di JavaScript.
+    // Tanpa JSX: React.createElement('h2', null, '...').
+    // Dengan JSX: <h2>...</h2>.
+    // Babel menerjemahkan JSX → React.createElement di runtime (dev only).
+
+    const element = <h2>Halo JSX! Salam dari Hezki</h2>;
+
+    // ReactDOM.createRoot(...).render(...) = cara render React 18.
+    ReactDOM.createRoot(document.getElementById('root')).render(element);
+    </script>
+</body>
+</html>

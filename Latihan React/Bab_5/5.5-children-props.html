@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>5.5 Children Props</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <h1>5.5 Children Props</h1>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // props.children = isi di dalam tag komponen
+        function Card(props) {
+        return (
+            <div style={{border:"1px solid gray", padding:"10px", margin:"5px"}}>
+            {props.children}
+            </div>
+        );
+        }
+
+        const App = () => (
+        <div>
+            <Card>
+            <h2>Halo dari Hezki</h2>
+            <p>Ini isi card pertama</p>
+            </Card>
+            <Card>
+            <h2>Judul Card Kedua</h2>
+            <p>Isi card kedua</p>
+            </Card>
+        </div>
+        );
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>

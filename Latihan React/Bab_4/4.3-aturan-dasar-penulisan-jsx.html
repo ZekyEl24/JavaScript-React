@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>4.3 Aturan Dasar Penulisan JSX</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <h1>4.3 Aturan Dasar Penulisan JSX</h1>
+    <div id="root"></div>
+
+    <script type="text/babel">
+    // Aturan JSX:
+    // 1. Harus ada 1 parent element
+    // 2. class → className
+    // 3. atribut camelCase (onClick, htmlFor)
+    // 4. Semua tag wajib ditutup (self closing)
+
+    const element = (
+        <div className="box">
+            <h2>Halo, Hezki!</h2>
+            <p>Ini contoh aturan dasar JSX</p>
+            <label htmlFor="nama">Nama:</label>
+            <input id="nama" placeholder="Tulis nama..." />
+            <br />
+            <img src="https://via.placeholder.com/100" alt="contoh" />
+        </div>
+    );
+
+        ReactDOM.render(element, document.getElementById('root'));
+    </script>
+</body>
+</html>
