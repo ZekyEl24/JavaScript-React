@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.4 ReactDOM.render()</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+</head>
+
+<body>
+    <h1>3.4 Method ReactDOM.render()</h1>
+    <div id="root"></div>
+
+    <script>
+    // Di React 18 → render pakai createRoot().render()
+    // Render = proses menampilkan elemen React ke dalam DOM
+
+    const element = React.createElement("h2", null, "Halo dari ReactDOM.render() - dibuat oleh Hezki");
+
+    ReactDOM.createRoot(document.getElementById("root")).render(element);
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.1 Mengenal File React</title>
+
+    <!-- ==============================
+        React & ReactDOM dari CDN
+        ==============================
+        - react.development.js = core React (komponen, state, dll)
+        - react-dom.development.js = alat untuk render React ke DOM
+    -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+</head>
+<body>
+    <h1>3.1 Mengenal File react.js & react-dom.js</h1>
+    <div id="root"></div>
+
+    <script>
+    // React.createElement() → membuat elemen React
+    // argumen: (type, props, children)
+    const element = React.createElement("h2", null, "Halo, ini React pertama saya - Hezki");
+
+    // ReactDOM.createRoot() → memilih target elemen di HTML (div#root)
+    // .render(element) → menampilkan elemen React ke browser
+    ReactDOM.createRoot(document.getElementById("root")).render(element);
+    </script>
+</body>
+</html>

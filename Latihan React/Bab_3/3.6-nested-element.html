@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.6 Nested React Element</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+</head>
+<body>
+    <h1>3.6 Nested React Element</h1>
+    <div id="app"></div>
+
+    <script>
+    // Nested React Element = elemen dalam elemen
+    // Gunakan array untuk children
+
+    const nestedElement = React.createElement(
+      "div", // parent <div>
+        { className: "container" },
+        [
+        React.createElement("h2", null, "Judul Container oleh Hezki"),
+        React.createElement("p", null, "Paragraf pertama - dibuat oleh Hezki"),
+        React.createElement("p", null, "Paragraf kedua - dibuat oleh Hezki")
+        ]
+    );
+
+    ReactDOM.createRoot(document.getElementById("app")).render(nestedElement);
+    </script>
+</body>
+</html>
