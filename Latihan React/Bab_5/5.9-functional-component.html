@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.9 Menampilkan Data dengan Functional Component</title>
+    <!-- React Core -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <!-- ReactDOM untuk render ke browser -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- Babel supaya kita bisa nulis JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <h1>5.9 Menampilkan Data dengan Functional Component</h1>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // ================================
+        // 1. Data Mahasiswa
+        // ================================
+        // Array objek mahasiswa sama seperti 5.8
+        const mahasiswas = [
+            { id: "01", nama: "Eka", jurusan: "Teknik Informatika", pasFoto: "people1.jpg" },
+            { id: "02", nama: "Lisa", jurusan: "Sistem Informasi", pasFoto: "people2.jpg" },
+            { id: "03", nama: "Rudi", jurusan: "Teknik Elektro", pasFoto: "people4.jpg" }
+        ];
+
+        // ================================
+        // 2. Functional Component: Mahasiswa
+        // ================================
+        // Functional Component cukup pakai function biasa (atau arrow function)
+        // Tidak ada render(), langsung return JSX
+        const Mahasiswa = () => {
+            return (
+                // map() looping array → hasilkan <figure> per mahasiswa
+                mahasiswas.map((mahasiswa) => (
+                    <figure key={mahasiswa.id}>
+                        {/* src gambar gabung "img/" + nama file */}
+                        <img src={"img/" + mahasiswa.pasFoto} alt={mahasiswa.nama} />
+                        <figcaption>
+                            {mahasiswa.nama} ({mahasiswa.jurusan})
+                        </figcaption>
+                    </figure>
+                ))
+            );
+        };
+
+        // ================================
+        // 3. Functional Component: DaftarMahasiswa
+        // ================================
+        // Komponen ini menampilkan judul + memanggil Mahasiswa
+        const DaftarMahasiswa = () => {
+            return (
+                <React.Fragment>
+                    {/* judul halaman */}
+                    <h1>Daftar Mahasiswa - Teknik Informatika</h1>
+                    <hr />
+                    {/* style flex untuk sejajar */}
+                    <section style={{ display: "flex", textAlign: "center" }}>
+                        {/* panggil komponen Mahasiswa */}
+                        <Mahasiswa />
+                    </section>
+                </React.Fragment>
+            );
+        };
+
+        // ================================
+        // 4. Render Komponen Utama
+        // ================================
+        // ReactDOM.render() → render ke DOM
+        // document.getElementById('root') → target elemen <div id="root">
+        ReactDOM.render(<DaftarMahasiswa />, document.getElementById('root'));
+    </script>
+</body>
+
+</html>

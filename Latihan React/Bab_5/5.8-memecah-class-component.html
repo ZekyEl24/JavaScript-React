@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.8 Memecah Class Component</title>
+    <!-- React Core Library -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <!-- ReactDOM untuk render ke browser -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- Babel supaya kita bisa menulis JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <h1>5.8 Memecah Class Component</h1>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // ================================
+        // 1. Data Mahasiswa
+        // ================================
+        // Array objek mahasiswa → setiap objek punya id, nama, jurusan, pasFoto
+        const mahasiswas = [
+            { id: 1, nama: "Hezki", jurusan: "Teknik Informatika", pasFoto: "foto/150.jpg" },
+            { id: 2, nama: "Andre", jurusan: "Sistem Informasi", pasFoto: "foto/150.jpg" },
+            { id: 3, nama: "Siti", jurusan: "Teknik Elektro", pasFoto: "foto/150.jpg" },
+            { id: 4, nama: "Budi", jurusan: "Teknik Mesin", pasFoto: "foto/150.jpg" }
+        ];
+
+        // ================================
+        // 2. Komponen Kecil: DataItem
+        // ================================
+        // Class Component untuk menampilkan 1 mahasiswa
+        // props.data → data dari parent (id, nama, jurusan, pasFoto)
+        class DataItem extends React.Component {
+            render() {
+                const { id, nama, jurusan, pasFoto } = this.props.data; // destructuring props
+                return (
+                    <figure key={id}>
+                        {/* gambar mahasiswa */}
+                        <img src={pasFoto} alt={nama} />
+                        {/* caption mahasiswa */}
+                        <figcaption>{nama} ({jurusan})</figcaption>
+                    </figure>
+                );
+            }
+        }
+
+        // ================================
+        // 3. Komponen List: DataList
+        // ================================
+        // Class Component untuk looping semua data & memanggil DataItem
+        class DataList extends React.Component {
+            render() {
+                return (
+                    <React.Fragment>
+                        {/* judul halaman */}
+                        <h1>Daftar Mahasiswa</h1>
+                        <hr />
+                        <section style={{ display: "flex", textAlign: "center" }}>
+                            {
+                                // map() = looping array → setiap item panggil <DataItem>
+                                mahasiswas.map((mhs) => (
+                                    <DataItem key={mhs.id} data={mhs} />
+                                ))
+                            }
+                        </section>
+                    </React.Fragment>
+                );
+            }
+        }
+
+        // ================================
+        // 4. Render Komponen Utama
+        // ================================
+        // ReactDOM.createRoot() → metode React 18 untuk render
+        // document.getElementById('root') → target elemen <div id="root">
+        ReactDOM.createRoot(document.getElementById('root')).render(<DataList />);
+    </script>
+</body>
+
+</html>

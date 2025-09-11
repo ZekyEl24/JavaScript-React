@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.7 Menampilkan Data Class Component</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <h1>5.7 Data Class Component</h1>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const datas = [
+        { id: 1, nama: "Hezki", umur: 25, pasFoto: "foto/150.jpg" },
+        { id: 2, nama: "Andre", umur: 30, pasFoto: "foto/150.jpg" },
+        { id: 3, nama: "Siti", umur: 22, pasFoto: "foto/150.jpg" },
+        { id: 4, nama: "Budi", umur: 28, pasFoto: "foto/150.jpg" },
+        { id: 5, nama: "Ani", umur: 24, pasFoto: "foto/150.jpg" }
+        ];
+
+        class DataList extends React.Component {
+            render(){
+                return(
+                    <React.Fragment>
+                        <h1>Daftar Mahasiswa</h1>
+                        <hr></hr>
+                        <section style={{display: "flex", textAlign: "center" }}>
+                            {
+                                datas.map((data) => 
+                                <figure key={data.id}>
+                                    <img src={data.pasFoto} alt={data.id} />
+                                    <figcaption>{data.nama} ({data.umur} tahun)</figcaption>
+                                    </figure>
+                                )
+                            }
+                            </section>
+                    </React.Fragment>
+                )
+            }
+        }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<DataList/>);
+    </script>
+</body>
+</html>
