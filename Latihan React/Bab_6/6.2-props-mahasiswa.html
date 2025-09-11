@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAB 6.2 - Props di Class Component</title>
+
+    <!-- React + Babel Standalone -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <h1>BAB 6.2 - Props di Class Component</h1>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        /*
+        =======================================================
+        TOOLS:
+        - this.props: cara akses props di class component
+        - console.log(this.props): cek semua props
+        =======================================================
+        */
+
+        // Contoh props tunggal
+        class Belajar extends React.Component {
+            render() {
+                return <p>Belajar {this.props.materi}</p>;
+            }
+        }
+
+        // Contoh props multiple attribute
+        class Belajar2 extends React.Component {
+            render() {
+                console.log(this.props); // cek props di console
+                return (
+                    <p id={this.props.id} className={this.props.className}>
+                        Belajar {this.props.materi} - ID {this.props.id}
+                    </p>
+                );
+            }
+        }
+
+        // Multiple Component Props
+        class Belajar3 extends React.Component {
+            render() {
+                return <p>Belajar {this.props.materi}</p>;
+            }
+        }
+
+        // Props Mahasiswa
+        class Mahasiswa extends React.Component {
+            render() {
+                console.log(this.props);
+                return (
+                    <figure>
+                        <img src={this.props.pasFoto} alt={this.props.nama} width="100" />
+                        <figcaption>{this.props.nama} ({this.props.jurusan})</figcaption>
+                    </figure>
+                );
+            }
+        }
+
+        class DaftarMahasiswa extends React.Component {
+            render() {
+                const mahasiswa = {
+                    nama: "Lisa",
+                    jurusan: "Sistem Informasi",
+                    pasFoto: "Bab_5/foto/150.jpg"
+                };
+                return (
+                    <React.Fragment>
+                        <h4>Daftar Mahasiswa (Class Component)</h4>
+                        <hr />
+                        <Mahasiswa
+                            nama={mahasiswa.nama}
+                            jurusan={mahasiswa.jurusan}
+                            pasFoto={mahasiswa.pasFoto}
+                        />
+                    </React.Fragment>
+                );
+            }
+        }
+
+        const App = () => (
+            <div>
+                <h2>Props Tunggal</h2>
+                <Belajar materi="React" />
+
+                <h2>Props Multiple Attribute</h2>
+                <Belajar2 materi="JavaScript" id="02" className="judul-besar" />
+
+                <h2>Props Multiple Component</h2>
+                <div>
+                    <Belajar3 materi="React" />
+                    <Belajar3 materi="NodeJS" />
+                    <Belajar3 materi="Programmer" />
+                </div>
+
+                <h2>Props Mahasiswa</h2>
+                <DaftarMahasiswa />
+            </div>
+        );
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAB 6.1 – Pengertian Props</title>
+
+    <!-- React, ReactDOM, Babel Standalone untuk JSX -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <h1>BAB 6.1 – Pengertian Props</h1>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        /*
+        =======================================================
+        PENJELASAN:
+        - Props = Property -> mengirim data antar komponen.
+        - Ditulis sebagai atribut di tag JSX komponen.
+        - Diakses pada Class Component -> this.props.namaAtribut
+        =======================================================
+        */
+
+        // Komponen Belajar menerima props "materi"
+        class Belajar extends React.Component {
+            render() {
+                return <h2>Belajar {this.props.materi}</h2>;
+            }
+        }
+
+        // Mengirim data props materi="React"
+        const myElement = <Belajar materi="React" />;
+
+        // Render ke DOM HTML
+        ReactDOM.createRoot(document.getElementById('root')).render(myElement);
+    </script>
+</body>
+
+</html>

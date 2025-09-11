@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAB 6.3 - Props di Functional Component</title>
+
+    <!-- React + Babel Standalone -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <h1>BAB 6.3 - Props di Functional Component</h1>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        /*
+        =======================================================
+        PENJELASAN:
+        - Functional Component = fungsi biasa return JSX
+        - Props tidak pakai "this", langsung (props) sebagai parameter
+        - {props.nama} -> akses data props
+        =======================================================
+        */
+
+        // Functional Component menerima props
+        const Belajar = (props) => <h2>Belajar {props.materi}</h2>;
+
+        // Bisa juga: const Belajar = (data) => <h2>{data.materi}</h2>;
+
+        const myElement = (
+            <div>
+                <Belajar materi="React" />
+                <Belajar materi="JavaScript" />
+                <Belajar materi="Programmer" />
+            </div>
+        );
+
+        ReactDOM.createRoot(document.getElementById('root')).render(myElement);
+    </script>
+</body>
+
+</html>
